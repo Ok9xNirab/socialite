@@ -14,7 +14,6 @@ class GithubController extends Controller {
 
     public function callback() {
         $githubUser = Socialite::driver( 'github' )->user();
-        ray( $githubUser )->green();
 
         $user = User::createOrFirst( [
             'email' => $githubUser->email

@@ -14,7 +14,6 @@ class FacebookController extends Controller {
 
     public function callback() {
         $facebookUser = Socialite::driver( 'facebook' )->user();
-        ray( $facebookUser )->blue();
 
         $user = User::createOrFirst( [
             'email' => $facebookUser->email,
